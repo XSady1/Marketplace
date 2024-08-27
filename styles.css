@@ -1,4 +1,4 @@
- /* Основные переменные для светлой темы */
+/* Основные переменные для светлой темы */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -7,6 +7,7 @@
     --button-text-color: #ffffff;
     --nav-bg-color: #e0e0e0;
     --listing-bg-color: #ffffff;
+    --modal-bg-color: #f4f4f4;
     --footer-bg-color: #003366;
 }
 
@@ -23,7 +24,8 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 10px;
     background-color: var(--header-bg-color);
     color: var(--button-text-color);
 }
@@ -33,79 +35,6 @@ header {
     font-weight: bold;
 }
 
-.search-bar input {
-    padding: 10px;
-    font-size: 16px;
-}
-
-.search-bar button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: var(--button-bg-color);
-    border: none;
-    color: var(--button-text-color);
-}
-
-.user-options button {
-    margin-left: 10px;
-    padding: 10px 20px;
-    background-color: var(--button-bg-color);
-    border: none;
-    color: var(--button-text-color);
-}
-
-nav {
-    background-color: var(--nav-bg-color);
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.categories {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.categories li {
-    cursor: pointer;
-    padding: 10px 20px;
-}
-
-main {
-    padding: 20px;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-.listing-grid {
-    display: flex;
-    gap: 20px;
-}
-
-.listing-item {
-    background-color: var(--listing-bg-color);
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-    width: calc(33.333% - 20px);
-}
-
-.listing-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-footer {
-    background-color: var(--footer-bg-color);
-    color: var(--button-text-color);
-    text-align: center;
-    padding: 20px;
-}
-
-/* Стили для переключателя темы (тумблер) */
 .theme-switch {
     position: relative;
     display: inline-block;
@@ -151,6 +80,127 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+.user-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 8px 15px;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--button-text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.nav-btn:hover {
+    background-color: #005bb5;
+}
+
+.main-nav {
+    background-color: var(--nav-bg-color);
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.categories li {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    transition: background-color 0.3s;
+}
+
+.categories li:hover {
+    background-color: #005bb5;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.listing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.listing-item {
+    background-color: var(--listing-bg-color);
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--button-text-color);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--modal-bg-color);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+}
+
+button {
+    cursor: pointer;
+}
+
 /* Стили для темной темы */
 body.dark-theme {
     --bg-color: #121212;
@@ -160,5 +210,6 @@ body.dark-theme {
     --button-text-color: #ffffff;
     --nav-bg-color: #1c1c1c;
     --listing-bg-color: #2c2c2c;
+    --modal-bg-color: #2c2c2c;
     --footer-bg-color: #1c1c1c;
 }
