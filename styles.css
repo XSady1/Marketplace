@@ -1,0 +1,164 @@
+ /* Основные переменные для светлой темы */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg-color: #003366;
+    --button-bg-color: #0066cc;
+    --button-text-color: #ffffff;
+    --nav-bg-color: #e0e0e0;
+    --listing-bg-color: #ffffff;
+    --footer-bg-color: #003366;
+}
+
+/* Базовые стили для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--header-bg-color);
+    color: var(--button-text-color);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--button-text-color);
+}
+
+.user-options button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--button-text-color);
+}
+
+nav {
+    background-color: var(--nav-bg-color);
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.categories li {
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.listing-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.listing-item {
+    background-color: var(--listing-bg-color);
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: calc(33.333% - 20px);
+}
+
+.listing-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--button-text-color);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Стили для переключателя темы (тумблер) */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Стили для темной темы */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg-color: #1c1c1c;
+    --button-bg-color: #333333;
+    --button-text-color: #ffffff;
+    --nav-bg-color: #1c1c1c;
+    --listing-bg-color: #2c2c2c;
+    --footer-bg-color: #1c1c1c;
+}
